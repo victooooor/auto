@@ -2,8 +2,10 @@
 - hosts: all
 
   become: true
+  become_method: sudo
   tasks:
     - name: update apt packages
       apt:
         upgrade: yes
         update_cache: yes
+        state: present
